@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☁️ Cloud Foundation and Cloud Architecting Q&A</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 85%;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            display: none; /* Hide the main content initially */
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 100px;
+            height: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .section-header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-weight: bold;
+            margin: 20px 0 10px;
+            color: #007bff;
+            font-size: 1.1em;
+        }
+
+        .answer {
+            margin: 10px 0 20px 20px;
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .cloud-foundation, .cloud-architecting {
+            margin-top: 30px;
+        }
+
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .celebration h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .celebration p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+
+        .celebration button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #007bff;
+            background-color: #fff;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .celebration button:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            opacity: 0.7;
+            border-radius: 50%;
+            animation: confettiAnim 5s linear infinite;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 85%;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            display: none; /* Hide the main content initially */
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 100px;
+            height: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .section-header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-weight: bold;
+            margin: 20px 0 10px;
+            color: #007bff;
+            font-size: 1.1em;
+        }
+
+        .answer {
+            margin: 10px 0 20px 20px;
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .cloud-foundation, .cloud-architecting {
+            margin-top: 30px;
+        }
+
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .celebration h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .celebration p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+
+        .celebration button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #007bff;
+            background-color: #fff;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .celebration button:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            opacity: 0.7;
+            border-radius: 50%;
+            animation: confettiAnim 5s linear infinite;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #343a40;
+            border-top: 1px solid #dee2e6;
+            font-size: 0.9em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+       
+        @keyframes confettiAnim {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .section-header {
+                font-size: 1.2em;
+            }
+
+            .question, .answer {
+                font-size: 1em;
+            }
+
+            .celebration h2 {
+                font-size: 2.5em;
+            }
+
+            .celebration p {
+                font-size: 1.2em;
+            }
+
+            .celebration button {
+                font-size: 1em;
+            }
+        }
+    </style>
+       
+</head>
+<body>
+
+    <div class="celebration" id="celebration">
+        <h2>🎉 Welcome 🎉</h2>
+        <p>Thank you for visiting our Cloud Foundation & Cloud Architecting Q&A page!</p>
+        <button onclick="hideCelebration()">Start Exploring</button>
+        <div class="confetti" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
+        <div class="confetti" style="top: 20%; left: 30%; animation-delay: 0.5s;"></div>
+        <div class="confetti" style="top: 30%; left: 50%; animation-delay: 1s;"></div>
+        <div class="confetti" style="top: 40%; left: 70%; animation-delay: 1.5s;"></div>
+        <div class="confetti" style="top: 50%; left: 20%; animation-delay: 2s;"></div>
+        <div class="confetti" style="top: 60%; left: 40%; animation-delay: 2.5s;"></div>
+        <div class="confetti" style="top: 70%; left: 60%; animation-delay: 3s;"></div>
+        <div class="confetti" style="top: 80%; left: 80%; animation-delay: 3.5s;"></div>
+    </div>
+
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" class="logo">
+        <h1>Cloud Foundation & Cloud Architecting Q&A</h1>
+
+        <!-- Cloud Foundation Questions -->
+        <div class="cloud-foundation">
+            <div class="section-header">Cloud Foundation</div>
+
+            <div class="question">1. What are advantages of cloud computing for a company moving from a traditional on-premises computing model (Select TWO)?</div>
+            <div class="answer">Answer: The Company can focus less on infrastructure and focus more on differentiating the business</div>
+            <div class="answer">Answer : resources can be created, scaled up, scaled down or destroyed based on demand.</div>
+
+            <div class="question">2. How do economies of scale help customers moving to cloud computing from on-premises computing?</div>
+            <div class="answer">Answer: Coutomers can achieve lower variable costs and scale infrastructure beyond what is possible on premises.</div>
+
+            <div class="question">3. Which Statement accurately descibe AWS Pricing?</div>
+            <div class="answer">Answer: Volume based discounts are available when usages increases.</div>
+
+            <div class="question">4. How does the AWS Billing Dashboard help companies analyze their AWS usage to find potential cost-saving opportunities?</div>
+            <div class="answer">Answer: The billing dashboard shows the status of the month-to-date AWS expenditure and the AWS services that account for the majority of the overall expenditure.</div>
+
+            <div class="question">5. Which Statement abouy AWS Regions is true ?</div>
+            <div class="answer">Answer: Using a Region as close as possible to users can reduce latency.</div>
+
+            <div class="question">6. Which statements about AWS Identity and Access Management (IAM) policies are accurate? (Select TWO)</div>
+            <div class="answer">Answer: Access control lists (ACLs) are a form of resource-based policies.</div>
+            <div class="answer">Answer: Identity-based policies are attached to a user, group, or role.</div>
+
+
+            <div class="question">7. A company must produce reports of any changes to its Amazon EC2 instance settings. Which AWS service should they use?</div>
+            <div class="answer">Answer: AWS Config</div>
+
+            <div class="question">8. A network administrator wants to configure a public subnet and route incoming and outgoing traffic to and from an Amazon EC2 instance in the public subnet to the public internet. Which virtual private cloud (VPC) feature should they use?</div>
+            <div class="answer">Answer: An Internet Gateway.</div>
+            
+            <div class="question">9. which requirement suggests configuring Amazon Route S3 with latency routing</div>
+            <div class="answer">Answer: A company wants to route traffic to the Region that provides the fastest experience based on performance measurements.</div>
+
+            <div class="question">10. A company needs to run a short script each time a new item is added to an Amazon S3 bucket. Which compute option meets the need with the least amount of resource provisioning?</div>
+            <div class="answer">Answer: Create an AWS Lambda function to run the script whenever a new item is added to the bucket.</div>
+
+            <div class="question">11. A company has a set of big data processing jobs in Amazon Simple Queue Service (Amazon SQS) that need a lot of compute.  Which Amazon EC2 instancing pricing model would meet the need at the lowest possible cost?</div>
+            <div class="answer">Answer: Spot instance</div>
+
+            <div class="question">12. A developer wants to use Amazon Elastic Block Store (Amazon EBS) for their application. What action should they take?</div>
+            <div class="answer">Answer: Attach the Amazon EBS volume to an Amazon EC2 instance.</div>
+
+            <div class="question">13.A company needs to store long-lived data. They need the data to be available immediately, but access patterns are unpredictable. Which Amazon S3 storage class would be most cost-effective?</div>
+            <div class="answer">Answer: Amazon S3 Intelligent-Tiering</div>
+
+            <div class="question">14. Which Statement about Amazon S3 Glacier Security is accurate? </div>
+            <div class="answer">Answer: Access to Amazon S3 Glacier can be managed using AWS Identity and Access Management (IAM) policies.</div>
+
+            <div class="question">15. Which option is a company's responsibility when running Amazon RDS?</div>
+            <div class="answer">Answer: Application Optimization</div>
+
+            <div class="question">16. What is an attribute in an Amazon DynamoDB table?</div>
+            <div class="answer">Answer: A data element that doesn't need to be broken down further.</div>
+
+            <div class="question">17. Which statement reflects a design principle of the Reliability pillar of the AWS Well-Architected Framework?</div>
+            <div class="answer">Answer: Replace one large resource with multiple, smaller resources, and distribute requests across these smaller resources.</div>
+
+            <div class="question">18. For which type of use case is it usually OK to have 2 nines of availability (99%) ?</div>
+            <div class="answer">Answer: Batch processing</div>
+
+            <div class="question">19. Which pieces of information MUST be configured for the Amazon EC2 instances that will be part of an Amazon EC2 Auto Scaling group? (Select TWO) </div>
+            <div class="answer">Answer: ID of an Amazon Machine Image (AMI)</div>
+            <div class="answer">Answer: Amazon EC2 instance type</div>
+
+            <div class="question">20. Which statement about AWS Auto Scaling is true?</div>
+            <div class="answer">Answer: AWS Auto Scaling can be used to automatically scale Amazon DynamoDB tables and indexes.</div>
+        </div>
+
+        <!-- Cloud Architecting Questions -->
+        <div class="cloud-architecting">
+            <div class="section-header">Cloud Architecting</div>
+
+            <div class="question">1. A manufacturer wants to grant permissions to a new chief technology officer (CTO). They need permanent access to manage AWS resources, allowing them to create, modify, and delete resources as needed. Which AWS Identity and Access Management (IAM) identity type should be used in this scenario?</div>
+            <div class="answer">Answer: IAM user</div>
+
+            <div class="question">2. A large organization uses AWS to host their web applications. They want to define fine-grained access control for their applications, ensuring that developers only have access to specific resources within their respective projects. Which permission mechanism best fits this use case?</div>
+            <div class="answer">Answer: Identity policy</div>
+
+            <div class="question">3. A developer wants to store 10 years of data logs cost efficiently. Which service can support this workload?</div>
+            <div class="answer">Answer: Amazon S3</div>
+
+            <div class="question">4. A company is required to keep customer data for 10 years for regulatory compliance. How can they transition data between storage classes without using manual processes?</div>
+            <div class="answer">Answer: Amazon S3 lifecycle policy</div>
+
+            <div class="question">5. A company is launching a Linux instance that will be used to host a high-performing Redis database. They want to select an instance type that is best suited for the workload. Which instance type should they choose when they launch the instance</div>
+            <div class="answer">Answer: Memory optimized instance type</div>
+
+            <div class="question">6. An architect needs an EC2 instance that runs for at least 1 year. In that year, the needs of the workload might change to require that the instance be moved to a new Region. They must keep costs low and guarantee that the computing cost will remain the same if the Region changes. Which pricing option should they choose?</div>
+            <div class="answer">Answer: EC2 Instance Savings Plans</div>
+
+            <div class="question">7. A cloud architect has a development PostgreSQL database running on Amazon RDS. It was being used to test a production database with a heavy read-write workload. Testing is complete, and they want to delete the database. Company policy requires storage of development database backups for 6 months after deletion. How can you accomplish this?</div>
+            <div class="answer">Answer: Take Snapshots, and store it for 6 months</div>
+
+            <div class="question">8. A complex enterprise application uses a Amazon DynamoDB table. The application queries the database using the "User_ID" partition key from the "Applicants" table. New functionality requires querying the "Applicants" table using the "resident_Email" field. What must be done to ensure the best performance when using the new functionality?</div>
+            <div class="answer">Answer: Create a global secondary index for the "Applicants" table using "resident_Email" as the partition key.</div>
+
+            <div class="question">9. An EC2 instance hosts a publicly accessible application. The security team identified a malicious IP address that needs to be blocked. How should they block the malicious IP address, without disrupting traffic to other users?</div>
+            <div class="answer">Answer: Modify the network access control list (network ACL) inbound rule to deny traffic from the malicious IP address.</div>
+
+            <div class="question">10. An online shopping application will run in a virtual private cloud (VPC) on EC2 instances. The application must read and write data to a customer managed database. There should be no access to the database from the internet, but the database must be able to get software patches from the internet. Which VPC design meets these requirements?</div>
+            <div class="answer">Answer: Use public subnets for the application tier and for the NAT gateway. Then, use a private subnet for the database tier.</div>
+
+            <div class="question">11. An architect is responsible for configuring a hybrid architecture for a small company with a large customer base. The requirements are that overall costs must be low and the solution must reuse existing internet connections. Which service will best meet the requirements?</div>
+            <div class="answer">Answer: AWS Site-to-Site VPN</div>
+
+            <div class="question">12. An architecture spans across two Regions and has multiple virtual private clouds (VPCs) in each Region. The architect sets up an AWS Transit Gateway hub in each Region to peer the VPCs. They need to connect the Transit Gateway hubs in each Region together so that traffic can flow between Regions. Which solution should they use to connect the Transit Gateway hubs?</div>
+            <div class="answer">Answer: Transit gateway peering attachments</div>
+
+            <div class="question">13. A solutions architect is designing an application that needs to manage and control temporary user identities and their corresponding access across AWS Identity and Access Management (IAM) users in multiple AWS accounts. Which AWS service would be the most appropriate to use?</div>
+            <div class="answer">Answer: AWS Security Token Service (AWS STS)</div>
+
+            <div class="question">14. A developer is creating a web application that is hosted on an EC2 instance that requires disk level encryption for all data stored. Which AWS service offers this feature?</div>
+            <div class="answer">Answer: Amazon Elastic Block Store (Amazon EBS)</div>
+
+            <div class="question">15. A developer has an architecture that consists of multiple AWS accounts. They want to find a way to reduce the overall costs and better manage and control which services and resources can be provisioned in an account. Which AWS service can help do this?</div>
+            <div class="answer">Answer: AWS organizations</div>
+
+            <div class="question">16. A long-running application implemented on EC2 instances uses an Amazon EC2 Auto Scaling policy to cost effectively scale the application servers. The application traffic cannot be predicted, so auto scaling should be automated based on previous workload traffic patterns. Which auto scaling policy type would satisfy the requirement?</div>
+            <div class="answer">Answer: Predictive Scaling Policy</div>
+
+            <div class="question">17. An internal facing web application is used intermittently and should be extremely cost efficient. The relational database should require minimal human administration and automatically scale horizontally using configured limits. Over weekends, the database should be stopped. Which Amazon database would satisfy these requirements?</div>
+            <div class="answer">Answer: Amazon Aurora Serverless</div>
+
+            <div class="question">18. A solutions architect is designing an application using AWS CloudFormation. The application requires code that integrates AWS services that the architect is less familiar with. Which service can offer real-time code suggestions to help the solutions architect to successfully code for these requirements?</div>
+            <div class="answer">Answer: AWS Amplify</div>
+
+            <div class="question">19. A developer was just hired by a large organization that uses many different AWS services in their environment. They were instructed to configure a web application using stateless web servers. Which services can they use to handle session state data?</div>
+            <div class="answer">Answer: Amazon Elasticache</div>
+            <div class="answer">Answer: Amazon DynamoDB</div>
+
+            <div class="question">20. A social media platform allows users to update their profile pictures. The process of resizing images is synchronous, which causes considerable strain on the main server. The application currently utilizes Amazon EC2 to process the profile picture, then updates and stores them in Amazon S3. During peak usage times, the service encounters latency issues. How can Amazon Simple Queue Service (Amazon SQS) be used to decouple the existing architecture?</div>
+            <div class="answer">Answer: Directly upload the picture to S3 and have a trigger add a message to Amazon SQS to have EC2 process the picture.</div>
+
+            <div class="question">21. A global financial institution currently relies on an on-premises message-oriented middleware for its high-volume trade processing systems. They are considering migrating to a cloud-based messaging service. When should the financial institution consider the implementation of Amazon MQ?</div>
+            <div class="answer">Answer: When the institution wants to retain their existing application code and achieve better scalability and operational efficiency</div>
+
+            <div class="question">22. Which are examples of microservice serverless patterns on AWS? (Select TWO.)</div>
+            <div class="answer">Answer: Amazon Kinesis invokes an AWS Lambda function and stores data on Amazon DynamoDB.</div>
+            <div class="answer">Answer: Amazon API Gateway invokes an application running on AWS Fargate containers through an Application Load Balancer.</div>
+
+            <div class="question">23. A stock brokerage company wants to provide a secure, scalable API solution for their AWS resources. Customers can sign up for the free service, which limits API requests per day, or the paid service for unlimited API usage. Which API type would satisfy these requirements?</div>
+            <div class="answer">Answer: Amazon API Gateway REST API</div>
+
+            <div class="question">24. A data engineer wants to use Spark scripts to parallel batch process raw data. They need to perform extract, transform, and load (ETL) on a CSV file and load it into Parquet format. They do not have the IT and developer staff to configure and monitor the infrastructure or to write the ETL code. Which AWS service would best meet the data engineer’s needs?</div>
+            <div class="answer">Answer: AWS Glue</div>
+
+            <div class="question">25. A cloud architect needs to give their management team a recommendation of implementing synchronous data replication for the Amazon RDS database to help meet the recovery time objective (RTO). Which option can perform synchronous data replication in Amazon RDS? </div>
+            <div class="answer">Answer: Amazon RDS Multi-AZ</div>
+
+        </div>
+
+        <div>
+            <div class="section-header">DAV- Google Data Analytics Certification</div>
+
+            <div class="question">1. Which Analytics 360 feature would you use to create a new data set by combining data from multi-source properties to get a broad view of your business across brands, products, or regions?</div>
+            <div class="answer">Answer: Roll-up properties</div>
+
+            <div class="question">2. If you want to analyze events and users across your business's website, as well as its separate apps for iOS and Android — how should you set up your account?</div>
+            <div class="answer">Answer: One property with one web data stream for your website and two app data streams, one for iOS and the other for Android</div>
+
+            <div class="question">3. Which of these Analytics 360 features would you use to filter data and create a new data set for a specific use case or audience?</div>
+            <div class="answer">Answer: Subproperties</div>
+
+            <div class="question">4. Your team needs to change the default primary dimension for the User Acquisition Report within their Google Analytics property. Which action can they take to accomplish this?</div>
+            <div class="answer">Answer: They can select a new primary dimension.</div>
+
+            <div class="question">5. Your team wants to monitor for any unexpected spikes or declines in traffic to your website. Which built-in Google Analytics function highlights these events?</div>
+            <div class="answer">Answer: Anomaly detection highlights these events.</div>
+
+            <div class="question">6. Because you've set up your web data stream, your website is already feeding data to your Google Analytics property. You notice that enhanced measurement is enabled for the web data stream. What happens when this setting is enabled?</div>
+            <div class="answer">Answer: Additional events are collected from your website without you needing to change your website's code</div>
+
+            <div class="question">7. You've noticed some discrepancies in your Google Analytics property and are trying to troubleshoot. Which of the following dimensions can you use to help identify anomalies or potential issues?</div>
+            <div class="answer">Answer: Use country, OS version, operating system with version.</div>
+
+            <div class="question">8. This Analytics feature allows you to connect individual customers' behavior across various interactions on different platforms and devices by letting you associate your own identifiers with your individual customers.</div>
+            <div class="answer">Answer: User-ID</div>
+
+            <div class="question">9. As a business owner, you'd like to do a deeper breakdown and analysis of the data that's displayed in your standard table report. Which feature would help you do that?</div>
+            <div class="answer">Answer: Secondary Dimension would help you do a deeper breakdown and analysis of the data.</div>
+
+            <div class="question">10. When creating a Free-Form Report, which types of visualizations are available for you to include?</div>
+            <div class="answer">Answer: You can include tables, line charts, scatterplots, and bar charts.</div>
+
+            <div class="question">11. Your colleague has customized a report and wants it to be easily viewable. Where should they add the report so it appears in the left-hand navigation?</div>
+            <div class="answer">Answer: Add it to Library.</div>
+
+            <div class="question">12. You just added a feature to your website allowing users to sign up for a newsletter. Now, you want to mark new sign-up events as conversions and create an audience for people who signed up. Where in Google Analytics 4 would you go to manage events, conversions, and audiences?</div>
+            <div class="answer">Answer: Go to Admin.</div>
+
+            <div class="question">13. You're asked to set up a data stream in accordance with setting up Google Analytics. What is a data stream?</div>
+            <div class="answer">Answer: A data stream lives within a property and is a source of data from your app or website.</div>
+
+            <div class="question">14. You are the managing editor of a blog that features several contributing writers. What could you use to report the writer's name on each article page?</div>
+            <div class="answer">Answer: Custom dimension</div>
+
+            <div class="question">15. You want to know how various ads you've placed work together on the path to conversions, so you decide to look at the Attribution Paths Report. Where in your Google Analytics 4 property can you find this report?</div>
+            <div class="answer">Answer: To view the report, go to Advertising.</div>
+
+            <div class="question">16. You need to review several sets of data, and decide to create a table report so you can see them side by side. Which component of the Analytics interface helps you do that?</div>
+            <div class="answer">Answer: The Comparisons component</div>
+
+            <div class="question">17. When a user watches a video, this triggers an event on your website. Which of these is an event parameter?</div>
+            <div class="answer">Answer: Name of a video watched on your site</div>
+
+            <div class="question">18. Which of these exploration techniques helps you visualize the steps your users take toward a key task or conversion and determine how well they're succeeding or failing at each step?</div>
+            <div class="answer">Answer: Funnel exploration helps visualize these steps.</div>
+
+            <div class="question">19. Which events are accounted for in the Realtime report?</div>
+            <div class="answer">Answer: Events that took place within the last 30 minutes</div>
+
+            <div class="question">20. Which of these Google Analytics features would allow you to develop a dashboard to view analytics data alongside in-store customer purchase data that lives in another business application?</div>
+            <div class="answer">Answer: The Data API feature</div>
+
+            <div class="question">21. You manage a company that installs swimming pools. You post a new how-to-video on your website about proper pool maintenance. Google Analytics has a lot of data about user interactions with this video. Which of these choices is a "user property" collected by Google Analytics?</div>
+            <div class="answer">Answer: The language preference of users watching the video on your site</div>
+
+            <div class="question">22. If you have created a Google Analytics 4 property for your mobile app and web site, how would Google Analytics measure and report distinct user interactions?</div>
+            <div class="answer">Answer: As events</div>
+
+            <div class="question">23. Which of the following scopes would be set for a custom dimension reporting membership status for a customer rewards program?</div>
+            <div class="answer">Answer: The User scope would be set.</div>
+
+            <div class="question">24. To understand how many users are coming from various devices, like computers or mobile phones, you run a report that shows this data, per device, over the past 30 days. In this report, which of these is considered a "metric" in Google Analytics?</div>
+            <div class="answer">Answer: How many users were on mobile phones</div>
+
+            <div class="question">25. Which new report template should you use when you want to create a net-new report to add to the left-hand nav that details source / medium filtered to desktop users only?</div>
+            <div class="answer">Answer: Use the Traffic Acquisition template.</div>
+
+            <div class="question">26. To understand how many users are coming from various devices, like desktops or mobile phones, you run a report that shows this data, per device, over the past 30 days. In this report, what is device type?</div>
+            <div class="answer">Answer: A dimension</div>
+
+            <div class="question">27. Which of these reports highlight how users behave on product detail pages based on the type of device they're using?</div>
+            <div class="answer">Answer: The Pages and Screens Report</div>
+
+            <div class="question">28. Which of these features lets you control how long user-level and event-level data is stored by Google Analytics?</div>
+            <div class="answer">Answer: Data retention period</div>
+
+            <div class="question">29. If you wanted to gain insights into the organic search queries that are taking users to your website, which platform should you connect with Analytics?</div>
+            <div class="answer">Answer: Search Console</div>
+
+            <div class="question">30. Which of these sections of Google Analytics Reports provides insights into where users are coming from (e.g., social media) before visiting your website?</div>
+            <div class="answer">Answer: Acquisition</div>
+
+            <div class="question">31. You have a website and want to start gathering and reporting insights for it in Google Analytics. What should you set up first?</div>
+            <div class="answer">Answer: Analytics tag</div>
+
+            <div class="question">32. You are in your Google Analytics property's Explore section. What exploration technique should you use in order to customize metrics and dimensions in a table format?</div>
+            <div class="answer">Answer: Free form</div>
+
+            <div class="question">33. You've been collecting data on your point-of-sale system that could be used in conjunction with data you send to Google Analytics from your website and app. Which of these features allows you to collect and send events directly to Google Analytics servers?</div>
+            <div class="answer">Answer: Measurement Protocol</div>
+
+            <div class="question">34. The page_view event is triggered whenever a website visitor views any page on your site. But if you want to set up a new event to trigger when visitors land on a particular page (e.g., the homepage), which option would you choose once you've navigated to Events in the Google Analytics interface?</div>
+            <div class="answer">Answer: You would choose Create event.</div>
+
+            <div class="question">35. You want to create new audiences for your eCommerce site by segmenting users according to parameters that make sense for your business, like those who've made a purchase. Which of these approaches would provide you with a predictive audience?</div>
+            <div class="answer">Answer: You create an audience of users who are likely to purchase in the next seven days.</div>
+
+            <div class="question">36. When you've enabled Ads Personalization for your property, but want specific events excluded, what happens with the data for those excluded events?</div>
+            <div class="answer">Answer: That data will only be used for measurement purposes.</div>
+
+            <div class="question">37. To link a Google Analytics property to BigQuery, you'll see two options for selecting how frequently that data should be exported. What are those two options?</div>
+            <div class="answer">Answer: The two options are Daily and Streaming.</div>
+
+            <div class="question">38. What can Google Ads do with audiences from Google Analytics when these two services are linked?</div>
+            <div class="answer">Answer: Audiences in Google Ads can be used to target ad campaigns.</div>
+
+            <div class="question">39. Which dimension should you use to determine which sources, such as "organic search" or "referral," are driving users to your website?</div>
+            <div class="answer">Answer: You should use Session source / medium.</div>
+
+            <div class="question">40. If you're a business owner who wants to analyze how users arrive at your website and app, as well as the user journeys across both of these platforms, what should you use to generate insights?</div>
+            <div class="answer">Answer: Use Google Analytics 4 properties.</div>
+
+            <div class="question">41. When you view a User Acquisition Report and a Traffic Acquisition Report, what are the key differences in the information each report will highlight for you?</div>
+            <div class="answer">Answer: A User Acquisition Report shows you the very first campaign/source/medium the user arrived at the site with. And the Traffic Acquisition Report shows you the campaign/source/medium for the session.</div>
+
+            <div class="question">42. Which Google Analytics feature relies on machine learning and Google AI for measuring conversions that can't be spotted through direct observation?</div>
+            <div class="answer">Answer: The Key event modeling feature</div>
+
+            <div class="question">43. When building a purchase funnel in Explore, which of these dimensions allow you to select a homepage view?</div>
+            <div class="answer">Answer: Page path and screen class allow you to select a homepage view.</div>
+
+            <div class="question">44. Which of these tasks can be done using audience triggers?</div>
+            <div class="answer">Answer: Create new events based on an audience rule being satisfied.</div>
+
+            <div class="question">45. You want to find techniques that go beyond standard reports so you can uncover deeper insights about customer engagement. Which section of your Google Analytics property contains this?</div>
+            <div class="answer">Answer: It's in the Explore section.</div>
+
+            <div class="question">46. You want to find ready-made cards that address typical questions about how users are interacting with your app or website. Which section do you go to in order to find this?</div>
+            <div class="answer">Answer: You'd find it in the Reports section.</div>
+
+            <div class="question">47. You want to know what pages new users open most often after opening your home page, so you create a new path exploration in Explore that you plan to share with a co-worker. Who can see this new path exploration by default?</div>
+            <div class="answer">Answer: Just you; but you can share it with the other users of the property in read-only mode.</div>
+
+            <div class="question">48. When Google Analytics and Google ads are linked, how can Google Ads use conversion events from Google Analytics?</div>
+            <div class="answer">Answer: It can optimize bids for ad placements.</div>
+
+            <div class="question">49. Some of the events on your website are especially valuable to you — things like purchases or newsletter sign-ups. If you wanted to mark these events as important and assign a value to them, what mark should you assign to them in your Google Analytics 4 property?</div>
+            <div class="answer">Answer: You should mark them as Key events.</div>
+
+            <div class="question">50. After exporting Google Analytics data to BigQuery, what new opportunity do you have to use your data?</div>
+            <div class="answer">Answer: You can use SQL to query your data to answer questions and gain insights into your products, users, and channels.</div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Developed by Krishna Mishra</a>
+           <a href="https://www.linkedin.com/in/krishna--mishra/" target="_blank">LinkedIn</a> |
+           <a href="https://github.com/Krishna-mishra-26/ask-the-cloud" target="_blank">GitHub</a>
+        </p>
+    </div>
+
+
+    <script>
+        function hideCelebration() {
+            document.querySelector('.celebration').style.display = 'none';
+            document.querySelector('.container').style.display = 'block';
+        }
+
+        setTimeout(hideCelebration, 3000);
+    </script>
+</body>
+</html>
